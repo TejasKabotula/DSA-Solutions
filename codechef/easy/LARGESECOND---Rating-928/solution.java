@@ -13,12 +13,22 @@ public class Main {
                 a[i] = scanner.nextInt();
             }
             // Your code goes here
-            TreeSet<Integer>s=new TreeSet<>();
+            int max=0;
+            int lmax=0;
             for(int x:a)
-            s.add(x);
-        
-            int a1=s.pollLast();
-            System.out.println(a1+s.pollLast()); 
+            {
+                if(x>max)
+                {
+                    lmax=max;
+                    max=x;
+                }
+                if(x<max && x>lmax)
+                {
+                    lmax=x;
+                }
+                
+            }
+            System.out.println(max+lmax);
             
             
            
