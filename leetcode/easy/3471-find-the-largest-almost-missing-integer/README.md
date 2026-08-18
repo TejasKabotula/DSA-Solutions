@@ -69,7 +69,7 @@ There is no integer that appears in only one subarray of size 1.
 **Language:** Java  
 **Runtime:** 0 ms  
 **Memory:** 42.5 MB  
-**Submitted:** 2026-08-18T15:57:03.844Z  
+**Submitted:** 2026-08-18T16:20:26.837Z  
 
 ```java
 class Solution {
@@ -77,7 +77,13 @@ class Solution {
         int i=0,k1=0,j=0;
         HashMap<Integer,Integer>hm=new HashMap<>();
         while(i<=nums.length-k)
-        {   
+        {    
+
+            HashSet<Integer> set = new HashSet<>();
+
+            for (int num = i; num < i + k; num++) {
+                set.add(nums[num]);
+            }
             if(k1<k)
             {   
                 hm.put(nums[j],hm.getOrDefault(nums[j],0)+1);
@@ -103,7 +109,7 @@ class Solution {
                 largest = Math.max(largest, num);
             }
         }
-        return largest;
+        return largest == Integer.MIN_VALUE ? -1 : largest;
 
 
     }
