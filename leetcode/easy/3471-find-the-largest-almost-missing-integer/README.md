@@ -67,51 +67,41 @@ There is no integer that appears in only one subarray of size 1.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.5 MB  
-**Submitted:** 2026-08-18T16:20:26.837Z  
+**Runtime:** 6 ms (beats 37.19%)  
+**Memory:** 46.5 MB (beats 17.54%)  
+**Submitted:** 2026-08-18T16:21:46.405Z  
 
 ```java
 class Solution {
     public int largestInteger(int[] nums, int k) {
-        int i=0,k1=0,j=0;
+        int i=0,k1=0;
         HashMap<Integer,Integer>hm=new HashMap<>();
-        while(i<=nums.length-k)
-        {    
+        while (i <= nums.length - k) {
 
             HashSet<Integer> set = new HashSet<>();
 
-            for (int num = i; num < i + k; num++) {
-                set.add(nums[num]);
+            for (int j = i; j < i + k; j++) {
+                set.add(nums[j]);
             }
-            if(k1<k)
-            {   
-                hm.put(nums[j],hm.getOrDefault(nums[j],0)+1);
-                j++;
-                k1++;
+
+            // Count each number only once per window
+            for (int num : set) {
+                hm.put(num, hm.getOrDefault(num, 0) + 1);
             }
-            else
-            {
-                i++;
-                j=i;
-                k1=0;
-            }
+
+            i++;
         }
-        int minFreq = Integer.MAX_VALUE;
+
         int largest = Integer.MIN_VALUE;
 
-        // 
+        // Find largest number appearing in exactly one window
         for (int num : hm.keySet()) {
-            minFreq = Math.min(minFreq, hm.get(num));
-        }
-        for (int num : hm.keySet()) {
-            if (hm.get(num) == minFreq) {
+            if (hm.get(num) == 1) {
                 largest = Math.max(largest, num);
             }
         }
+
         return largest == Integer.MIN_VALUE ? -1 : largest;
-
-
     }
 }
 ```
