@@ -3,7 +3,13 @@ class Solution {
         int i=0,k1=0,j=0;
         HashMap<Integer,Integer>hm=new HashMap<>();
         while(i<=nums.length-k)
-        {   
+        {    
+
+            HashSet<Integer> set = new HashSet<>();
+
+            for (int num = i; num < i + k; num++) {
+                set.add(nums[num]);
+            }
             if(k1<k)
             {   
                 hm.put(nums[j],hm.getOrDefault(nums[j],0)+1);
@@ -29,7 +35,7 @@ class Solution {
                 largest = Math.max(largest, num);
             }
         }
-        return largest;
+        return largest == Integer.MIN_VALUE ? -1 : largest;
 
 
     }
