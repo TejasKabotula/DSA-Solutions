@@ -32,7 +32,7 @@ Explanation: 2nd element from beginning is 3 and from end is 1.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-03T10:36:34.690Z  
+**Submitted:** 2026-09-04T16:39:42.962Z  
 
 ```java
 
