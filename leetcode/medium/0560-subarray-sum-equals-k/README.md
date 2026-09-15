@@ -38,8 +38,8 @@ Output: 2
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-09-15T10:00:56.165Z  
+**Memory:** 42.6 MB  
+**Submitted:** 2026-09-15T10:08:23.070Z  
 
 ```java
 class Solution {
@@ -61,7 +61,7 @@ class Solution {
             }
             if(sum<=k)
             {
-                count++;
+                count+=r-l+1;
                 
             }
             r++;
