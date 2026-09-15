@@ -17,7 +17,7 @@ class Solution {
             }
             if(sum<=k)
             {
-                count++;
+                count+=r-l+1;
                 
             }
             r++;
