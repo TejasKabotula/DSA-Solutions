@@ -57,9 +57,9 @@ Explanation: Only products 1 and 3 are both low fat and recyclable.
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 645 ms (beats 32.90%)  
+**Runtime:** 682 ms (beats 24.72%)  
 **Memory:** 0B (beats 100.00%)  
-**Submitted:** 2026-09-12T16:11:06.498Z  
+**Submitted:** 2026-09-21T16:44:11.156Z  
 
 ```sql
 select distinct product_id from Products where low_fats ='Y' and recyclable='Y';
