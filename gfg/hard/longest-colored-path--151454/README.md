@@ -47,7 +47,7 @@ Explanation: The longest path is 1 -> 2. The length of the path is 2.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-27T10:43:57.227Z  
+**Submitted:** 2026-10-17T16:09:14.375Z  
 
 ```java
 
